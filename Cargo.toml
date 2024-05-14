@@ -1,0 +1,38 @@
+[package]
+name = "bitvm-groth16-verifier"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bitvm = { git = "https://github.com/BitVM/bitvm" }
+
+
+[dev-dependencies]
+ark-std = "*"
+
+
+
+
+[patch.crates-io.base58check]
+git = "https://github.com/rust-bitcoin/rust-bitcoin"
+branch = "bitvm"
+
+[patch.crates-io.bitcoin]
+git = "https://github.com/rust-bitcoin/rust-bitcoin"
+branch = "bitvm"
+
+[patch.crates-io.bitcoin_hashes]
+git = "https://github.com/rust-bitcoin/rust-bitcoin"
+branch = "bitvm"
+
+[patch.crates-io.bitcoin-internals]
+git = "https://github.com/rust-bitcoin/rust-bitcoin"
+branch = "bitvm"
+
+[patch.crates-io.bitcoin-io]
+git = "https://github.com/rust-bitcoin/rust-bitcoin"
+branch = "bitvm"
+
+[patch.crates-io.bitcoin-units]
+git = "https://github.com/rust-bitcoin/rust-bitcoin"
+branch = "bitvm"
