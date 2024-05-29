@@ -8,8 +8,13 @@ You can find out the rust version [here](https://github.com/zulu-network/prove-o
 
 ## How to run
 ```bash
-cargo run --example groth16-verifier --release -- -nocapture
+cargo run --release -- -nocapture
 ```
+
+```bash
+nohup cargo run --release -- --nocapture > logs/log-1 2>&1 &
+```
+
 
 
 
