@@ -1,5 +1,3 @@
-use bitvm::execute_script_no_stack_limit;
-use bitvm::groth16::verifier::Verifier;
 use ark_bn254::Bn254;
 use ark_crypto_primitives::snark::{CircuitSpecificSetupSNARK, SNARK};
 use ark_ec::pairing::Pairing;
@@ -8,6 +6,8 @@ use ark_groth16::{prepare_verifying_key, Groth16};
 use ark_relations::lc;
 use ark_relations::r1cs::{ConstraintSynthesizer, ConstraintSystemRef, SynthesisError};
 use ark_std::{end_timer, start_timer, test_rng, UniformRand};
+use bitvm::execute_script_no_stack_limit;
+use bitvm::groth16::verifier::Verifier;
 use rand::{RngCore, SeedableRng};
 
 #[derive(Copy)]
