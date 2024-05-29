@@ -4,35 +4,36 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+num-bigint = "0.4.4"
+num-traits = "0.2.18"
+once_cell = "1.19.0"
+rand = "0.8.5"
+rand_chacha = "0.3.1"
+itertools = "0.10.5"
+
+ark-ff = { version = "0.4.0", default-features = false }
+ark-ec = { version = "0.4.0", default-features = false }
+ark-serialize = { version = "0.4.0", default-features = false, features = [ "derive" ] }
+ark-poly = { version = "0.4.0", default-features = false }
+ark-std = { version = "0.4.0", default-features = false, features = ["print-trace"] }
+ark-relations = { version = "0.4.0", default-features = false }
+ark-crypto-primitives = { version = "0.4.0", default-features = false, features = ["snark", "sponge"] }
+
+ark-bn254 = { version = "0.4.0", features = ["curve"] }
+ark-groth16 = "*"
+
+bitcoin = { git = "https://github.com/rust-bitcoin/rust-bitcoin", branch = "bitvm" }
 bitvm = { git = "https://github.com/BitVM/bitvm" }
 
+[patch.crates-io]
+base58check = { git = "https://github.com/rust-bitcoin/rust-bitcoin", branch = "bitvm"}
+bitcoin = { git = "https://github.com/rust-bitcoin/rust-bitcoin", branch = "bitvm"}
+bitcoin_hashes = { git = "https://github.com/rust-bitcoin/rust-bitcoin", branch = "bitvm"}
+bitcoin-internals = { git = "https://github.com/rust-bitcoin/rust-bitcoin", branch = "bitvm"}
+bitcoin-io = { git = "https://github.com/rust-bitcoin/rust-bitcoin", branch = "bitvm"}
+bitcoin-units = { git = "https://github.com/rust-bitcoin/rust-bitcoin", branch = "bitvm"}
 
-[dev-dependencies]
-ark-std = "*"
 
+[patch."https://github.com/BitVM/bitvm"]
+bitvm = { git = "ssh://git@github.com/zulu-network/BitVM2", branch = "feat/groth16-script" }
 
-
-
-[patch.crates-io.base58check]
-git = "https://github.com/rust-bitcoin/rust-bitcoin"
-branch = "bitvm"
-
-[patch.crates-io.bitcoin]
-git = "https://github.com/rust-bitcoin/rust-bitcoin"
-branch = "bitvm"
-
-[patch.crates-io.bitcoin_hashes]
-git = "https://github.com/rust-bitcoin/rust-bitcoin"
-branch = "bitvm"
-
-[patch.crates-io.bitcoin-internals]
-git = "https://github.com/rust-bitcoin/rust-bitcoin"
-branch = "bitvm"
-
-[patch.crates-io.bitcoin-io]
-git = "https://github.com/rust-bitcoin/rust-bitcoin"
-branch = "bitvm"
-
-[patch.crates-io.bitcoin-units]
-git = "https://github.com/rust-bitcoin/rust-bitcoin"
-branch = "bitvm"
